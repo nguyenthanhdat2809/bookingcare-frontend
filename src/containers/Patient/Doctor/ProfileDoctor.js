@@ -8,6 +8,7 @@ import NumberFormat from "react-number-format";
 import _ from "lodash";
 import moment from "moment";
 import localization from "moment/locale/vi";
+import { Link } from "react-router-dom"
 
 class ProfileDoctor extends Component {
   constructor(props) {
@@ -75,7 +76,10 @@ class ProfileDoctor extends Component {
     let { language } = this.props;
 
     if (dataTime && !_.isEmpty(dataTime)) {
-      let time = language === LANGUAGES.VI ? dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn;
+      let time =
+        language === LANGUAGES.VI
+          ? dataTime.timeTypeData.valueVi
+          : dataTime.timeTypeData.valueEn;
       let date =
         language === LANGUAGES.VI
           ? moment.unix(+dataTime.date / 1000).format("dddd - DD/MM/YYYY")
@@ -86,9 +90,15 @@ class ProfileDoctor extends Component {
 
       return (
         <>
-          <div><FormattedMessage id="patient.booking-modal.price-booking" /></div>
-          <div>{time} - {this.capitallizeFirstLetter(date)}</div>
-          <div><FormattedMessage id="patient.booking-modal.free-booking" /></div>
+          <div>
+            <FormattedMessage id="patient.booking-modal.price-booking" />
+          </div>
+          <div>
+            {time} - {this.capitallizeFirstLetter(date)}
+          </div>
+          <div>
+            <FormattedMessage id="patient.booking-modal.free-booking" />
+          </div>
         </>
       );
     }
@@ -97,9 +107,15 @@ class ProfileDoctor extends Component {
 
   render() {
     let { dataProfile, price } = this.state;
-    let { language, isShowDescriptionDoctor, dataTime } = this.props;
-    console.log("ckeck state profile: ", dataProfile);
-    console.log("ckeck props datatime: ", dataTime);
+    let {
+      language,
+      isShowDescriptionDoctor,
+      dataTime,
+      isShowLinkDetail,
+      isShowPrice,
+      doctorId
+    } = this.props;
+
     let nameVi = "";
     let nameEn = "";
 
@@ -140,28 +156,34 @@ class ProfileDoctor extends Component {
             </div>
           </div>
         </div>
+        
+        {isShowLinkDetail && <div className="view-detail-doctor"><Link to={`/detail-doctor/${doctorId}`}>Xem thêm</Link></div>}
 
-        <div className="price">
-          <span><FormattedMessage id="patient.booking-modal.price" />: </span>
-          {price && language === LANGUAGES.VI && (
-            <NumberFormat
-              value={price.valueVi}
-              displayType={"text"}
-              thousandSeparator={true}
-              suffix={"đ"}
-              className="currency"
-            />
-          )}
-          {price && language === LANGUAGES.EN && (
-            <NumberFormat
-              value={price.valueEn}
-              displayType={"text"}
-              thousandSeparator={true}
-              suffix={"$"}
-              className="currency"
-            />
-          )}
-        </div>
+        {isShowPrice && (
+          <div className="price">
+            <span>
+              <FormattedMessage id="patient.booking-modal.price" />:{" "}
+            </span>
+            {price && language === LANGUAGES.VI && (
+              <NumberFormat
+                value={price.valueVi}
+                displayType={"text"}
+                thousandSeparator={true}
+                suffix={"đ"}
+                className="currency"
+              />
+            )}
+            {price && language === LANGUAGES.EN && (
+              <NumberFormat
+                value={price.valueEn}
+                displayType={"text"}
+                thousandSeparator={true}
+                suffix={"$"}
+                className="currency"
+              />
+            )}
+          </div>
+        )}
       </div>
     );
   }

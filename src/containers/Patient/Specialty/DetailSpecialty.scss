@@ -5,6 +5,15 @@
   }
 
   .search-sp-doctor-location {
+    select {
+      height: 30px;
+      padding: 5px 8px;
+      border: none;
+      outline: none;
+      border-radius: 3px;
+      cursor: pointer;
+      border: 1px solid #ddd;
+    }
   }
 
   .description-specialty {
