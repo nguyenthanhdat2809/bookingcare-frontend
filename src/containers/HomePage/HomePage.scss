@@ -1,0 +1,192 @@
+.slick-prev {
+  background: #fff !important;
+  border: 1px solid #333 !important;
+  left: -10px !important;
+  z-index: 1000 !important;
+  height: 48px !important;
+  width: 44px !important;
+
+  &:hover {
+    background: rgb(245, 241, 241) !important;
+  }
+}
+
+.slick-next {
+  background: #fff !important;
+  border: 1px solid #333 !important;
+  right: -10px !important;
+  z-index: 100 !important;
+  height: 48px !important;
+  width: 44px !important;
+
+  &:hover {
+    background: rgb(245, 241, 241) !important;
+  }
+}
+
+.slick-next::before,
+.slick-prev::before {
+  font-family: "Glyphicons Halflings" !important;
+  color: #333 !important;
+  //content: "\e257" !important;
+}
+
+.slick-disabled {
+  display: none !important;
+}
+
+.section-share {
+  &.section-specialty {
+    background: #f5f5f5;
+  }
+
+  &.outstanding-doctor {
+    background: #f5f5f5;
+  }
+
+  &.section-about {
+    height: 450px !important;
+  }
+
+  .section-body {
+    .section-customize {
+      padding: 8px;
+      .bg-image {
+        width: 278px;
+        height: 150px;
+
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #eee;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+
+        // &.section-specialty {
+        //   background-image: url("../../assets/specialty/co-xuong-khop.jpg");
+        // }
+
+        &.section-medical-facility {
+          background-image: url("../../assets/medical-facility/thucuc.jpg");
+        }
+
+        &.section-out-standing-doctor {
+          // background-image: url("https://cdn.bookingcare.vn/fr/w200/2017/08/09/142120giao-su-dao-van-long-2.jpg");
+          width: 120px !important;
+          height: 120px !important;
+          border-radius: 50%;
+        }
+
+        &.section-handbook {
+          background-image: url("../../assets/handbook/handbook.jpg");
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .section-text {
+        color: #111;
+        padding: 5px 0;
+        font-size: 13px;
+        color: gray;
+
+        &:hover {
+          cursor: pointer;
+          color: #45c3d2;
+        }
+      }
+    }
+  }
+}
+
+.section-share {
+  height: 330px;
+
+  .section-container {
+    margin: 0 200px;
+    display: flex;
+    flex-direction: column;
+
+    .section-header {
+      height: 60px;
+      margin-bottom: 30px;
+      padding-top: 30px;
+
+      .title-section {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .btn-section {
+        font-size: 10px;
+        color: gray;
+        float: right;
+        display: block;
+        padding: 5px 10px;
+        border: none;
+        outline: none;
+        background: #ebebeb;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 10px 15px;
+        color: #282e41;
+
+        &:hover {
+          cursor: pointer;
+          color: #fff;
+          background: #f7d800;
+        }
+      }
+    }
+  }
+}
+
+.outstanding-doctor {
+  .outer-bg {
+    margin-bottom: 10px;
+  }
+
+  .section-customize {
+    padding: 5px;
+
+    .customize-border {
+      border: 1px solid #d1c3c3;
+      padding-bottom: 20px;
+      padding-top: 10px;
+    }
+  }
+}
+
+.home-footer {
+  padding-top: 8px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.section-about {
+  margin: 0 200px;
+  .section-about-header {
+    padding: 20px 10px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .section-about-content {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    .about-left {
+      width: 50%;
+    }
+
+    .about-right {
+      width: 50%;
+    }
+  }
+}

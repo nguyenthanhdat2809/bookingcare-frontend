@@ -1,0 +1,21 @@
+.manage-doctor-container {
+  padding: 5px;
+  overflow: hidden;
+
+  .save-content-doctor {
+    background-color: #0b6faf !important;
+  }
+
+  .more-info {
+    display: flex;
+    gap: 15px;
+
+    .content-left {
+      width: 40%;
+    }
+
+    .content-right {
+      width: 60%;
+    }
+  }
+}

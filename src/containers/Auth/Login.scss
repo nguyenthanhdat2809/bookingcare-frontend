@@ -1,0 +1,97 @@
+.login-background {
+  background: #2b4a76;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .login-container {
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+
+    .login-content {
+      padding: 10px;
+
+      .text-login {
+        text-align: center;
+        font-weight: 600;
+        font-size: 24px;
+        padding: 10px;
+      }
+
+      .login-input {
+        margin: 7px 0;
+      }
+
+      .btn-login {
+        margin: 8px 0;
+        background: #4a75b3;
+        color: #fff;
+        padding: 7px 30px;
+        border-radius: 5px;
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 17px;
+      }
+
+      .forgot {
+        margin: 5px 0;
+      }
+
+      .text-social {
+        font-size: 12px;
+      }
+
+      .social-login {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        i {
+          font-size: 35px;
+          margin: 0 5px;
+          cursor: pointer;
+        }
+
+        .google {
+          background-color: #f43030e8;
+          border-radius: 50%;
+          height: 50px;
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+        }
+
+        .facebook {
+          background-color: #1b5b85;
+          border-radius: 50%;
+          height: 50px;
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+        }
+      }
+
+      .text-other-login {
+        font-size: 13px;
+      }
+
+      .custom-input-password {
+        position: relative;
+
+        i {
+          position: absolute;
+          right: 5px;
+          top: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
