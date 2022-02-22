@@ -81,4 +81,8 @@ export const getAllDetailSpecialtyByIdService = async (data) => {
   return await axios.get(`/api/get-detail-specialty-by-id?id=${data.id}&location=${data.location}`);
 }
 
+export const createNewClinicService = async (data) => {
+  return await axios.post("/api/create-new-clinic", data);
+}
+
 export default handleLogin;
